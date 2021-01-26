@@ -1,16 +1,14 @@
-
-
 class Notes {
-	constructor(){
-			this.titre = t;
-			this.contenu = c;
-			this.date_creation = new Date();
+	constructor(t, c) {
+		this.titre = t;
+		this.contenu = c;
+		this.date_creation = new Date();
 	}
-	setTitre(){
-		
+	setTitre(title) {
+		this.title = title;
 	}
-	setContenu(){
-		
+	setContenu(contenu) {
+		this.contenu = contenu;
 	}
-	
+
 }

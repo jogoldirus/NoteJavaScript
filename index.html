@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>Notes.app</title>
   <link rel="stylesheet" href="css/notes.css" />
+  <script src="js/notes.js"></script>
+  <script src="js/noteFormView.js"></script>
 </head>
 
 <body>
@@ -43,13 +45,21 @@
     let plus = document.querySelector("#add");
 
     plus.addEventListener("click", (event) => {
+      let formview = new noteFormView();
       if (form.classList.contains("create_edit_note-hidden")) {
-        form.classList.remove("create_edit_note-hidden");
+        formview.display();
 
       } else {
-        form.classList.add("create_edit_note-hidden");
+        formview.hide();
       };
     });
+
+    form.children.item(2).addEventListener("click", (event) => {
+      let titre = form.children.item(0).value;
+      let content = form.children.item(1).value;
+      let note = new Notes(titre, content);
+      alert(note.titre);
+    })
   </script>
 </body>
 
